@@ -1,4 +1,5 @@
 @echo off
+
 echo ****************************************  
 
 echo .
@@ -33,9 +34,9 @@ if /i {%staus%}=={1} goto :job_2
 ECHO -------------------------------------
 ECHO.
 ECHO.
-ECHO 	当前为 ：	不是只读
+ECHO 	目前LOL键位属性：	未锁定
 ECHO.
-ECHO 	设置成 ： 	只读
+ECHO 	设置成 →→→→ 	锁定
 ECHO.
 ECHO.
 ECHO -------------------------------------
@@ -45,9 +46,9 @@ goto tuichu
 :job_2
 ECHO -------------------------------------
 ECHO.
-ECHO 	当前为 ：	只读
+ECHO 	目前LOL键位属性 ：	锁定
 ECHO.
-ECHO 	设置成 ：	取消只读
+ECHO 	设置成 →→→→	未锁定
 ECHO.
 ECHO.
 ECHO -------------------------------------
@@ -58,11 +59,11 @@ goto tuichu
 set staus=0
 attrib "%RADS_PATH%" | findstr "^.....R">nul && set staus=1
 ECHO. 
-ECHO 	更新设置文件状态......
+ECHO 	更改LOL键位配置文件属性......
 ECHO. 
 ECHO. 
-if /i {%staus%}=={1} echo 		只读、设置改不动了
-if /i {%staus%}=={0} echo 		不是只读、设置可以更改
+if /i {%staus%}=={1} echo 		LOL键位锁定成功
+if /i {%staus%}=={0} echo 		LOL键位解除锁定
 ECHO. 
 ECHO. 
 ECHO. 
@@ -72,5 +73,3 @@ ECHO.
 
 :test
 pause
-
-
